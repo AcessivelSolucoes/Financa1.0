@@ -1,6 +1,5 @@
 🚀 Projeto Finanças - AcessívelSoluções
 Versão Alfa - Protótipo
-
 Bem-vindo ao Projeto Finanças da AcessívelSoluções!
 Esta é a versão alfa ou protótipo do nosso sistema de gerenciamento financeiro, desenvolvido para facilitar a vida de nossos colaboradores e otimizar processos internos. Com esta plataforma, buscamos aprimorar a gestão de cobranças e o envio de contratos para nossos clientes de forma simples e eficiente.
 
@@ -15,8 +14,8 @@ Futuramente, planejamos integrar a plataforma para permitir o envio de assinatur
 🔮 O Futuro do Projeto
 O Projeto Finanças é uma iniciativa ambiciosa, e estamos dedicando nossos esforços para transformar esta ferramenta em um sistema completo e inovador. Com o passar do tempo, a plataforma será expandida para incluir mais funcionalidades, como:
 
-Relatórios detalhados 📊
-Integração com sistemas de pagamento 💳
-Previsões baseadas em IA para otimizar a performance e aumentar a produtividade de nossa equipe 🤖
+📊 Relatórios detalhados
+💳 Integração com sistemas de pagamento
+🤖 Previsões baseadas em IA para otimizar a performance e aumentar a produtividade de nossa equipe
 Vale lembrar que algumas funcionalidades ainda estão pendentes devido à viabilidade do projeto, mas estamos trabalhando para implementá-las assim que possível.
 
