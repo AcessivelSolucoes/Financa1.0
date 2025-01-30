@@ -24,6 +24,14 @@
                     <x-nav-link :href="route('divida.create')" :active="request()->routeIs('divida.create')">
                         {{ __('Cadastrar Dívida') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('relatorio.index')" :active="request()->routeIs('relatorio.index')">
+                        {{ __('Arquivos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('enviar-contrato')" :active="request()->routeIs('enviar-contrato')">
+                        {{ __('Contratos') }}
+                    </x-nav-link>
                     @endif
                 </div>
             </div>
@@ -97,6 +105,18 @@
 
             <x-responsive-nav-link :href="route('divida.create')" :active="request()->routeIs('divida.create')">
                 {{ __('Cadastrar Divida') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('relatorio.index')" :active="request()->routeIs('relatorio.index')">
+                {{ __('Relatórios') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('relatorio.index')" :active="request()->routeIs('relatorio.index')">
+                {{ __('Arquivos') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('enviar-contrato')" :active="request()->routeIs('enviar-contrato')">
+                {{ __('Contratos') }}
             </x-responsive-nav-link>
             @endif
         </div>

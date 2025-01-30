@@ -36,12 +36,21 @@ class DividaController extends Controller
 
         // Cria a dívida
         Divida::create([
-            'user_id' => $request->cliente_id,
+            'user_id' => auth()->user()->id,
             'valor' => $request->valor,
             'vencimento' => $request->vencimento,
             'status' => 'pendente', // Status padrão
         ]);
 
-        return redirect()->route('home')->with('success', 'Dívida cadastrada com sucesso!');
+        return redirect()->route('dashboard')->with('success', 'Dívida cadastrada com sucesso!');
+    }
+
+    public function arquivar(Divida $divida)
+    {
+        // Lógica para arquivar a dívida, por exemplo, mudar o status para "arquivada"
+        $divida->status = 'arquivada';
+        $divida->save();
+
+        return redirect()->route('dashboard')->with('success', 'Dívida arquivada com sucesso!');
     }
 }
