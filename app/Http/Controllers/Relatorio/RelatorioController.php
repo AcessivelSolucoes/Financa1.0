@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Relatorio;
 
 use App\Http\Controllers\Controller; // Importação do Controller base
-use Illuminate\Http\Request;
 
 class RelatorioController extends Controller
 {

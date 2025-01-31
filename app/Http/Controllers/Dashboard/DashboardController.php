@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Divida;
-use Illuminate\Http\Request;
 use App\Models\Contrato;
+use App\Models\Divida;
 
 class DashboardController extends Controller
 {

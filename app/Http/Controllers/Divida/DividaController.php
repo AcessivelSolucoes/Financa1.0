@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\Divida;
 
-use App\Models\User;
-use App\Models\Divida; // Modelo da dívida
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Divida; // Modelo da dívida
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class DividaController extends Controller
 {
     // Exibe o formulário para cadastrar a dívida
     public function create()
     {
-        //erro no vs code para interpretar o ->() pode substiruir por ::
+        // erro no vs code para interpretar o ->() pode substiruir por ::
         if (auth()->check() && auth()->user()->role === 'admin') {
             // Passa a lista de clientes (ou pode ser uma pesquisa)
             $clientes = User::where('role', 'user')->get();

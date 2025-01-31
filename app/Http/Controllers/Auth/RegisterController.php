@@ -3,18 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules\Password;  // Adicionar a importação da classe Password
-use Illuminate\Http\RedirectResponse;  // Adicionar a importação da classe RedirectResponse
-use Illuminate\Support\Facades\Auth;
-use App\Htpp\Controllers\Api\ViaCepController;
-
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;  // Adicionar a importação da classe Password
+use Illuminate\Support\Facades\Hash;  // Adicionar a importação da classe RedirectResponse
+use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
-
     // Exibe o formulário de criação de usuário
     public function create()
     {
@@ -22,6 +19,7 @@ class RegisterController extends Controller
         if (Auth::check() && Auth::user()->role === 'admin') {
             return view('usuario.create'); // A view está em resources/views/usuario/create.blade.php
         }
+
         // Caso não seja admin, redireciona para uma página com erro ou home
         return redirect()->route('dashboard')->with('error', 'Você não tem permissão para acessar esta página.');
     }
@@ -31,7 +29,7 @@ class RegisterController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'string', 'min:6', Password::defaults()],  // Correção aqui
             'role' => ['required', 'in:user,admin'],
         ]);
@@ -46,7 +44,6 @@ class RegisterController extends Controller
         // Redireciona após a criação
         return redirect()->route('usuario')->with('success', 'Usuário criado com sucesso!');
     }
-
 
     public function dashboard()
     {

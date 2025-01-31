@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
@@ -32,7 +31,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required','string', 'min:6', Rules\Password::defaults()],
+            'password' => ['required', 'string', 'min:6', Rules\Password::defaults()],
             'role' => ['required', 'in:user,admin'],
         ]);
 
@@ -44,7 +43,6 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
-
 
         return redirect(route('dashboard'));
     }
