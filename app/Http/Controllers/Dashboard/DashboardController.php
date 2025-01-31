@@ -23,6 +23,7 @@ class DashboardController extends Controller
 
     public function relatorio()
     {
+        // erro
         $dividas = Divida::where('user_id', auth()->id())->get();
         $contratos = Contrato::where('user_id', auth()->id())->get(); // Exemplo de recuperação dos contratos
 

@@ -9,7 +9,6 @@ use App\Http\Controllers\Divida\DividaController;
 use App\Http\Controllers\Relatorio\RelatorioController;
 use App\Http\Controllers\Contrato\UserContractController;
 
-
 // Página inicial (bem-vindo)
 Route::get('/', function () {
     return view('welcome');

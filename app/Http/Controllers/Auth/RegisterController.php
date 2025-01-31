@@ -11,10 +11,8 @@ use Illuminate\Http\RedirectResponse;  // Adicionar a importação da classe Red
 use Illuminate\Support\Facades\Auth;
 use App\Htpp\Controllers\Api\ViaCepController;
 
-
 class RegisterController extends Controller
 {
-
     // Exibe o formulário de criação de usuário
     public function create()
     {
