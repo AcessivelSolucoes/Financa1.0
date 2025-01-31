@@ -1,14 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Usuario\UsuarioController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Divida\DividaController;
-use App\Http\Controllers\Relatorio\RelatorioController;
 use App\Http\Controllers\Contrato\UserContractController;
-
+use App\Http\Controllers\Divida\DividaController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Relatorio\RelatorioController;
+use Illuminate\Support\Facades\Route;
 
 // Página inicial (bem-vindo)
 Route::get('/', function () {
@@ -45,10 +42,9 @@ Route::post('/dividas/{divida}/arquivar', [DividaController::class, 'arquivar'])
 
 Route::get('/relatorio', [RelatorioController::class, 'index'])->name('relatorio.index');
 
-
-//para teste
+// para teste
 Route::get('/enviar-contrato', [UserContractController::class, 'index'])->name('enviar-contrato');
 Route::post('/enviar-contrato/{id}', [UserContractController::class, 'sendContract'])->name('contrato.enviar');
 
 // Importa rotas de autenticação padrão do Laravel
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

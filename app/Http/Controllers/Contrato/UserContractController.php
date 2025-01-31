@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Contrato;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Controller;
 
 class UserContractController extends Controller
 {
@@ -14,6 +14,7 @@ class UserContractController extends Controller
     {
         // Exibe os usuários com seus respectivos status de contrato
         $users = User::where('role', '!=', 'admin')->get();
+
         return view('contratos.enviar', compact('users'));
     }
 
