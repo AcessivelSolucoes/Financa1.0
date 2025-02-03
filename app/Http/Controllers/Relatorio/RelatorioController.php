@@ -8,7 +8,6 @@ class RelatorioController extends Controller
 {
     public function index()
     {
-        // Aqui você pode passar os dados dos gráficos de ganhos e pagamentos para a view
         return view('relatorio.index');
     }
 }

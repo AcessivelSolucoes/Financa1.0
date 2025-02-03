@@ -4,27 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Contrato;
 use App\Models\Divida;
-
+use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index()
     {
-        // Se for admin, mostrar todas as dívidas
-        if (auth()->user()->role == 'admin') {
+        if (Auth::user()->role == 'admin') {
             $dividas = Divida::all();
         } else {
-            // Se for usuário comum, mostrar apenas suas dívidas
-            $dividas = Divida::where('user_id', auth()->user()->id)->get();
+            $dividas = Divida::where('user_id', Auth::user()->id)->get();
         }
-
         return view('dashboard', compact('dividas'));
     }
-
     public function relatorio()
     {
-        $dividas = Divida::where('user_id', auth()->id())->get();
-        $contratos = Contrato::where('user_id', auth()->id())->get(); // Exemplo de recuperação dos contratos
-
+        $dividas = Divida::where('user_id', Auth::user()->id())->get();
+        $contratos = Contrato::where('user_id', Auth::user()->id())->get(); 
         return view('relatorio', compact('dividas', 'contratos'));
     }
 }

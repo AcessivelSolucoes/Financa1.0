@@ -16,7 +16,6 @@ class Divida extends Model
         'status',
     ];
 
-    // Relacionamento com o usuário (cliente)
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
